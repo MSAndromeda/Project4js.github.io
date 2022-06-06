@@ -48,9 +48,11 @@ function RollDice() {
         Total = 0; // Changing The temporary Score to 0
         ScoreChg(1); // Changes The temporary Score
         PlayerToggle();
-    } else if (rand1 === rand2 === 1) {
+    } else if (rand1 === rand2 === 2) {
         Total = 0;
-        ScoreChg(0); // Changes The permanent Score
+        document.querySelector('.active').children[0].children[1].textContent = Total;
+        document.querySelector('.active').children[1].children[1].textContent = Total;
+        PlayerToggle();
     }
     Total += rand1 + rand2;
     ScoreChg(1); // Changes The temporary Score
@@ -81,13 +83,14 @@ function PlayerToggle() {
     Play2.classList.toggle('active');
     Play2.classList.toggle('opacity-80');
     Play2.classList.toggle('font-semibold');
+    rand1 = rand2 = 0;
 }
 
 // Functioon To check The Status of Win and Declaring Winner
 function WinnerCheck() {
     const winner = document.querySelector('.active');
     let winchild = winner.children[0].children;
-    let winscore = winchild[1].textContent;
+    let winscore = parseInt(winchild[1].textContent);
     let winHeading = winchild[0];
     if (winscore >= Limit) {
         winHeading.textContent = 'WINNER';
