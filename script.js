@@ -102,7 +102,7 @@ function WinnerCheck() {
 // Initializes New Game Start
 function NewGame() {
     reset();
-    const winner = document.querySelector('.active');
+    let winner = document.querySelector('.active');
     let winHeading = winner.children[0].children[0];
     winHeading.classList.remove('text-rose-700');
     winner.classList.replace('bg-stone-900', 'bg-rose-200');
