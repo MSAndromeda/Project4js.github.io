@@ -7,6 +7,7 @@ let buttons = document.getElementsByTagName('button');
 let Popup = document.getElementById('popup');
 let Overlay = document.getElementById('Over');
 let inputNum = document.getElementById('inputnum');
+let HelpWin = document.getElementById('Help');
 let Limit = 50; // Default Winning Score Limit
 let P1 = Play1.children;
 let P2 = Play2.children;
@@ -14,6 +15,13 @@ let P2 = Play2.children;
 function reset() {
     Popup.classList.replace('hidden', 'flex');
     Overlay.classList.remove('hidden');
+}
+
+function How(val) {
+    if (val === 0)
+        HelpWin.classList.replace('-translate-x-1/2', 'translate-x-full');
+    else
+        HelpWin.classList.replace('translate-x-full', '-translate-x-1/2');
 }
 
 function SetValue() {
@@ -27,7 +35,6 @@ function SetValue() {
     }
 }
 
-
 let rand1, rand2, Total = 0;
 // Gets Called When Roll Dice Button is Triggered
 function RollDice() {
@@ -35,10 +42,13 @@ function RollDice() {
     rand2 = Math.ceil(Math.random() * 6);
     Dice1.src = `Dice/dice-${rand1}.png`;
     Dice2.src = `Dice/dice-${rand2}.png`;
-    if (rand1 === rand2 || rand1 === 1 || rand2 === 1) {
+    if (rand1 === 1 || rand2 === 1) {
         Total = 0; // Changing The temporary Score to 0
         ScoreChg(1); // Changes The temporary Score
         PlayerToggle();
+    } else if (rand1 === rand2 === 1) {
+        Total = 0;
+        ScoreChg(0); // Changes The permanent Score
     }
     Total += rand1 + rand2;
     ScoreChg(1); // Changes The temporary Score

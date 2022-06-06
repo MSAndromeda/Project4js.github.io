@@ -11,14 +11,19 @@
 
 <body class="h-screen bg-gradient-to-br from-rose-800 to-fuchsia-800">
     <!-- Main Container Start -->
+
     <div class="flex flex-col h-full justify-center items-center">
+
         <!-- New Game Btn start -->
         <div>
-            <button onclick="NewGame()" class="bg-white px-2 rounded-2xl sm:text-1xl sm:py-2 sm:px-4 lg:text-2xl">New Game</button>
+            <button onclick="NewGame()" class="bg-white px-2 sm:text-1xl sm:py-2 sm:px-4 lg:text-2xl">New Game</button>
+            <button onclick="How(1)" class="bg-white px-2 sm:text-1xl sm:py-2 sm:px-4 lg:text-2xl">How To play</button>
         </div>
         <!-- New Game Btn end -->
+
         <!-- Player info start -->
         <div class="flex flex-col sm:flex-row h-3/4 w-11/12 sm:w-3/5 drop-shadow-2xl shadow-rose-900 my-2">
+
             <!-- Player 1 Container Start -->
             <div id="Player-1" class="active h-1/2 sm:h-full sm:w-1/2 bg-rose-200">
                 <div class="text-center h-2/4 sm:mt-20">
@@ -31,6 +36,7 @@
                 </div>
             </div>
             <!-- Player 1 Container End -->
+
             <!-- Player 2 Container Start -->
             <div id="Player-2" class="h-1/2 sm:h-full sm:w-1/2 bg-rose-200 opacity-80">
                 <div class="text-center h-2/4 sm:mt-20">
@@ -45,25 +51,52 @@
             <!-- Player 2 Container End -->
         </div>
         <!-- Player info end -->
+
         <!-- Playing Btn Start -->
         <div class="space-x-10">
-            <button onclick="RollDice()" class="bg-white px-2 rounded-2xl  sm:text-1xl sm:py-2 sm:px-4 lg:text-2xl">Roll Dice</button>
-            <button onclick="HoldScore()" class="bg-white px-2 rounded-2xl  sm:text-1xl sm:py-2 sm:px-4 lg:text-2xl">Hold</button>
+            <button onclick="RollDice()" class="bg-white px-2 sm:text-1xl sm:py-2 sm:px-4 lg:text-2xl">Roll Dice</button>
+            <button onclick="HoldScore()" class="bg-white px-2 sm:text-1xl sm:py-2 sm:px-4 lg:text-2xl">Hold</button>
         </div>
         <!-- Playing Btn end -->
+
+        <!-- Dice Start -->
         <div class="z-10 fixed w-10 sm:w-16 lg:w-20 top-1/2  -translate-x-2/3 -translate-y-2/4 sm:-translate-x-[56.5%] lg:-translate-x-[55%] flex space-x-2 drop-shadow-lg">
             <img id="Dice-1" src="Dice/dice-1.png" alt="">
             <img id="Dice-2" src="Dice/dice-1.png" alt="">
         </div>
+        <!-- Dice End -->
     </div>
+    <!-- Main Container End -->
+
+    <!-- Limit Enter Popup Start -->
     <div id="popup" class="flex flex-col justify-center items-center z-20 fixed top-1/2 w-fit px-4 py-2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-rose-700 text-white">
         <h1 class="md:text-4xl">Enter Winning Score</h1>
         <label class="md:text-3xl" for="input">Enter Custom Limit</label>
         <input id="inputnum" type="number" max="200" size="2" min="50" class="text-white bg-rose-900 text-center md:text-3xl" value="50" placeholder="50-200">
         <button onclick="SetValue()" class="bg-white w-full text-black sm:text-1xl md:text-2xl transition-colors hover:bg-cyan-600 hover:text-white">Click to Enter Game</button>
     </div>
+    <!-- Limit Enter Popup End -->
+
+    <!-- Limit Enter Overlay Start -->
     <div id="Over" class="fixed top-0 left-0 w-full h-full bg-rose-900 opacity-80"></div>
-    <!-- Main Container End -->
+    <!-- Limit Enter Overlay End -->
+
+    <!-- Help Window Start -->
+    <div id="Help" class="transition-transform duration-1000 flex flex-col justify-center items-center z-20 fixed top-1/2 w-fit px-4 py-2 left-1/2 translate-x-full -translate-y-1/2 bg-rose-700 text-white">
+        <div class="flex justify-between items-baseline w-full">
+            <h2 class="text-xl">Two-Dice Pig</h2>
+            <button onclick="How(0)" class="text-2xl">&times;</button>
+        </div>
+        <p>This variation is the same as Pig, except:
+            <ul role="list" class="marker:text-rose-300 list-disc px-2 space-y-1 text-white">
+                <li>Two standard dice are rolled. If neither shows a 1, their sum is added to the turn total.</li>
+                <li>If a single 1 is rolled, the player scores nothing and the turn ends.</li>
+                <li> If two 1s are rolled, the player’s entire score is lost, and the turn ends.</li>
+                <!-- <li> If a double is rolled, the point total is added to the turn total as with any roll but the player is obligated to roll again.</li> -->
+            </ul>
+        </p>
+    </div>
+    <!-- Help Window End -->
     <script src="script.js"></script>
 </body>
 
