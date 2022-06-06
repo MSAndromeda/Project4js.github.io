@@ -18,10 +18,11 @@ function reset() {
 }
 
 function How(val) {
-    if (val === 0)
-        HelpWin.classList.replace('-translate-x-1/2', 'translate-x-full');
-    else
-        HelpWin.classList.replace('translate-x-full', '-translate-x-1/2');
+    if (val === 0) {
+        HelpWin.classList.replace('flex', 'hidden');
+    } else {
+        HelpWin.classList.replace('hidden', 'flex');
+    }
 }
 
 function SetValue() {

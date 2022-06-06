@@ -82,13 +82,13 @@
     <!-- Limit Enter Overlay End -->
 
     <!-- Help Window Start -->
-    <div id="Help" class="transition-transform duration-1000 flex flex-col justify-center items-center z-20 fixed top-1/2 w-fit px-4 py-2 left-1/2 translate-x-full -translate-y-1/2 bg-rose-700 text-white">
+    <div id="Help" class="hidden flex-col justify-center w-fit items-center z-20 fixed top-1/2 m-10 px-6 py-2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-rose-700 text-white">
         <div class="flex justify-between items-baseline w-full">
-            <h2 class="text-xl">Two-Dice Pig</h2>
-            <button onclick="How(0)" class="text-2xl">&times;</button>
+            <h2 class="text-xl md:text-3xl">Two-Dice Pig</h2>
+            <button onclick="How(0)" class="text-2xl md:text-5xl">&times;</button>
         </div>
-        <p>This variation is the same as Pig, except:
-            <ul role="list" class="marker:text-rose-300 list-disc px-2 space-y-1 text-white">
+        <p class="md:text-2xl">This variation is the same as Pig, except:
+            <ul role="list" class="md:text-2xl marker:text-rose-300 list-disc space-y-1 text-white">
                 <li>Two standard dice are rolled. If neither shows a 1, their sum is added to the turn total.</li>
                 <li>If a single 1 is rolled, the player scores nothing and the turn ends.</li>
                 <li> If two 1s are rolled, the player’s entire score is lost, and the turn ends.</li>
