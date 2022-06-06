@@ -25,11 +25,12 @@ function How(val) {
     }
 }
 
+
 function SetValue() {
     Limit = inputNum.value;
     if (Limit < 50 || Limit > 200) {
         Limit = 50;
-        label.textContent = 'Enter Number within Limit';
+        document.getElementsByTagName('label')[0].textContent.textContent = 'Enter Number within Limit';
     } else {
         Popup.classList.replace('flex', 'hidden');
         Overlay.classList.add('hidden');
